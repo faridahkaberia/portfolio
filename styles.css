@@ -1,0 +1,333 @@
+/* Fonts and Basic Styles */
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+/* Header and Navigation */
+#main-header {
+    background-color: blueviolet; /* or another color */
+    padding: 5px 0;
+    top: 0;
+    position: fixed; /* Fixes the header to the top */
+    width: 100%;
+    z-index: 1000; /* Ensures the header is above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+}
+
+#main-header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#main-header nav ul li {
+    margin: 0 15px;
+}
+
+#main-header nav ul li a {
+    color: white; 
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+#main-header nav ul li a:hover {
+    color: #ffcc00; 
+}
+
+/* Hero Section */
+#hero {
+    margin-top: 60px; 
+    background-image: url('images/herobackground.png'); 
+    background-size: cover;
+    background-position: center;
+    color: black;
+    height: 50vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+.hero-content .btn-primary {
+    background-color: #004d99;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.btn-primary:hover {
+    background-color: #ffcc00;
+}
+/* About Section */
+#about h2 {
+    text-align: left;
+    color: navy;
+    font-size: 2em;
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: #f9f9f9;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-image img {
+    width: 350px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+.about-text,
+.about-image {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-container.visible .about-text,
+.about-container.visible .about-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-text, .about-image {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.social-links {
+    display: inline-flex;
+    gap: 20px;
+    font-size: 30px;
+    margin-top: 1px;
+}
+
+/* skills section */
+#skills {
+    margin: 10px;
+}
+#skills h2{
+    font-size: 2em;
+    color: navy;
+    text-align: center;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    background-color: blueviolet; 
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.skill-scale {
+    background-color: #e6e6e6; 
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.skill-level {
+    background-color: #ffcc00; 
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.4s ease; 
+}
+
+/* Projects Section */
+#projects {
+    padding: 40px 0;
+    background-color: #f7f7f7;
+}
+
+#projects h2{
+    font-size: 2em;
+    color: navy;
+    text-align: center;
+}
+.project-grid {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.project-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 40px;
+}
+
+.project-item img {
+    width: 100%;
+}
+
+.project-item h3 {
+    color: rgb(35, 152, 224);
+}
+.btn-secondary {
+    background-color: #004d99;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #003366;
+}
+
+/* Experience and Education Sections */
+#experience, #education {
+    background-color: rgb(246, 249, 250);
+}
+#experience h2{
+    text-align: center;
+    font-size: 2em;
+    color: navy;
+}
+#education h2 {
+    text-align: center;
+    font-size: 2em;
+    color: navy;
+}
+
+.experience-item, .education-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.experience-left, .education-left {
+    width: 25%;
+    text-align: right;
+    font-size: 1em;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.6s ease;
+}
+
+.experience-right, .education-right {
+    width: 65%;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s ease;
+}
+
+.experience-line, .education-line {
+    width: 1px;
+    height: 100%;
+    background-color: #b4b4b4;
+    position: absolute;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.experience-item.visible .experience-left, 
+.education-item.visible .education-left {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s ease-in-out;
+}
+
+.experience-item.visible .experience-right, 
+.education-item.visible .education-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Tools Section */
+#tools {
+    background-color: #f9f9f9;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+#tools h2 {
+    font-size: 2em;
+    color: navy;
+    margin-bottom: 30px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    border: solid 0.5px grey;
+    background-color: white;
+}
+
+.tool-item img {
+    width: 80px;
+    transition: transform 0.3s;
+}
+
+.tool-item:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 10px 0;
+    background-color: rgb(240, 241, 241);
+    text-align: center;
+}
+#contact h2 {
+    color: navy;
+    font-size: 2em;
+}
+#contact a {
+    text-decoration: none;
+}
+.contact-container {
+    align-items: flex-start;
+}
+.footer {
+    background-color: blueviolet;
+    text-align: center;
+    bottom: 0;
+    padding: 10px;
+    color: white;
+}
