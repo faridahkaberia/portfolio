@@ -601,6 +601,9 @@ body, html {
 
 /* Extra Small Mobile (320px and below) */
 @media (max-width: 320px) {
+    #main-header {
+        padding: 10px 0;
+    }
     .hero-content h1 {
         font-size: 1.3rem;
     }
