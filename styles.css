@@ -7,15 +7,50 @@ body, html {
     color: #333;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+
 /* Header and Navigation */
 #main-header {
-    background-color: blueviolet; /* or another color */
+    background-color: blueviolet;
     padding: 5px 0;
     top: 0;
-    position: fixed; /* Fixes the header to the top */
+    position: fixed;
     width: 100%;
-    z-index: 1000; /* Ensures the header is above other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 #main-header nav ul {
@@ -198,7 +233,7 @@ body, html {
 .btn-secondary {
     background-color: #004d99;
     color: white;
-    padding: 5px 1px;
+    padding: 8px 5px;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.8em;
@@ -331,4 +366,251 @@ body, html {
     bottom: 0;
     padding: 10px;
     color: white;
+}
+
+/* Tablet Portrait (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation - Show Hamburger Menu */
+    .hamburger {
+        display: flex;
+    }
+    #main-header {
+        padding: 25px 0;
+    }
+
+    #main-header nav ul {
+        position: fixed;
+        left: 100%;
+        top: 20px;
+        flex-direction: column;
+        background-color: blueviolet;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 10px 0;
+    }
+
+    #main-header nav ul.active {
+        left: 0;
+    }
+
+    #main-header nav ul li {
+        margin: 4px 0;
+    }
+
+    #main-header nav ul li a {
+        font-size: 0.88rem;
+    }
+
+    /* Hero Section */
+    #hero {
+        height: 40vh;
+        margin-top: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about-image img {
+        width: 250px;
+    }
+
+    #about h2 {
+        text-align: center;
+    }
+
+    /* Projects Section */
+    .project-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Experience and Education */
+    .experience-item, .education-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .experience-left, .education-left,
+    .experience-right, .education-right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .experience-line, .education-line {
+        display: none;
+    }
+
+    /* Tools Section */
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .tool-item img {
+        width: 60px;
+    }
+}
+
+/* Mobile Landscape (576px - 767px) */
+@media (max-width: 576px) {
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-content .btn-primary {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* About Section */
+    .about-image img {
+        width: 200px;
+    }
+
+    .social-links {
+        font-size: 25px;
+        gap: 15px;
+    }
+
+    /* Section Headings */
+    #about h2,
+    #skills h2,
+    #projects h2,
+    #experience h2,
+    #education h2,
+    #tools h2,
+    #contact h2 {
+        font-size: 1.5em;
+    }
+
+    /* Projects */
+    .project-item {
+        padding: 15px;
+    }
+
+    /* Tools */
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* Contact and Footer */
+    #contact {
+        padding: 20px 10px;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    /* Header */
+    #main-header {
+        padding: 3px 0;
+    }
+
+    /* Hero */
+    #hero {
+        height: 35vh;
+        margin-top: 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+    }
+
+    /* About */
+    .about-image img {
+        width: 180px;
+    }
+
+    /* Skills */
+    .skill-item {
+        padding: 10px;
+    }
+
+    /* Projects */
+    .project-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .btn-secondary {
+        padding: 6px 4px;
+        font-size: 0.7em;
+    }
+
+    /* Tools */
+    .tool-item img {
+        width: 50px;
+    }
+
+    /* Section Padding */
+    #skills,
+    #projects,
+    #experience,
+    #education,
+    #tools,
+    #contact {
+        padding: 20px 10px;
+    }
+}
+
+/* Extra Small Mobile (320px and below) */
+@media (max-width: 320px) {
+    .hero-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-content p {
+        font-size: 0.7rem;
+    }
+
+    .about-image img {
+        width: 150px;
+    }
+
+    #main-header nav ul li a {
+        font-size: 1.1rem;
+    }
 }
