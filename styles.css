@@ -483,6 +483,9 @@ body, html {
 /* Mobile Landscape (576px - 767px) */
 @media (max-width: 576px) {
     /* Hero Section */
+    #main-header {
+        padding: 25px 0;
+    }
     .hero-content h1 {
         font-size: 2rem;
     }
@@ -542,7 +545,7 @@ body, html {
 @media (max-width: 480px) {
     /* Header */
     #main-header {
-        padding: 3px 0;
+        padding: 10px 0;
     }
 
     /* Hero */
