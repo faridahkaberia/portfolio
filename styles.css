@@ -522,6 +522,7 @@ body, html {
     /* Projects */
     .project-item {
         padding: 15px;
+        width: 80%;
     }
 
     /* Tools */
@@ -573,6 +574,9 @@ body, html {
     }
 
     /* Projects */
+    .project-item {
+        width: 80%;
+    }
     .project-item h3 {
         font-size: 1.1rem;
     }
