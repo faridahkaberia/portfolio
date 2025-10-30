@@ -14,7 +14,6 @@ body, html {
     cursor: pointer;
     padding: 10px;
     position: absolute;
-    /* right: 50px; */
     top: 50%;
     transform: translateY(-50%);
     z-index: 1001;
@@ -198,7 +197,7 @@ body, html {
 
 /* Projects Section */
 #projects {
-    padding: 40px 0;
+    padding: 30px 0;
     background-color: #f4eded;
 }
 
@@ -439,7 +438,7 @@ body, html {
 
     /* Projects Section */
     .project-item {
-        width: 100%;
+        width: 90%;
         margin-bottom: 20px;
     }
 
